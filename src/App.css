@@ -1,38 +1,77 @@
-.App {
-  text-align: center;
+*,::after,::before{
+  padding: 0;
+  margin: 0;
+  box-sizing: border-box;
 }
 
-.App-logo {
-  height: 40vmin;
+/* table, th, td {
+  border:1px solid black;
+  border-collapse: collapse;
+} */
+
+.table_style{
+  margin: 0;
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  -ms-transform: translate(-50%, -50%);
+  transform: translate(-50%, -50%);
+  max-height: 400px;
+  overflow: overlay;
+}
+
+
+ thead th{
+  z-index: 1;
+position: sticky;
+top: 0;
+background-color: #652f2f !important;
+}
+
+.table_style::-webkit-scrollbar-track
+{
+	-webkit-box-shadow: inset 0 0 6px rgba(0,0,0,0.3);
+	background-color: #F5F5F5;
+	border-radius: 10px;
+}
+
+.table_style::-webkit-scrollbar
+{
+	/* width: 10px; */
+	background-color: #F5F5F5;
+}
+
+.table_style::-webkit-scrollbar-thumb
+{
+	border-radius: 10px;
+	background-image: -webkit-gradient(linear,
+									   left bottom,
+									   left top,
+									   color-stop(0.44, rgb(122,153,217)),
+									   color-stop(0.72, rgb(73,125,189)),
+									   color-stop(0.86, rgb(28,58,148)));
+}
+
+
+
+
+.hide {
+  display: none;
+}
+    
+.myDiv:hover + .hide {
+  cursor: pointer;
+  display: block;
+}
+
+.table_style tbody tr td:nth-child(2):first-letter{
+  text-transform:capitalize;
+  color: #ff0000;
+  font-size: 18px;
+  font-weight: 800;
+}
+
+.Disabled {
   pointer-events: none;
-}
-
-@media (prefers-reduced-motion: no-preference) {
-  .App-logo {
-    animation: App-logo-spin infinite 20s linear;
-  }
-}
-
-.App-header {
-  background-color: #282c34;
-  min-height: 100vh;
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  justify-content: center;
-  font-size: calc(10px + 2vmin);
-  color: white;
-}
-
-.App-link {
-  color: #61dafb;
-}
-
-@keyframes App-logo-spin {
-  from {
-    transform: rotate(0deg);
-  }
-  to {
-    transform: rotate(360deg);
-  }
+  opacity: 0.4;
 }
